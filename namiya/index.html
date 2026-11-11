@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Namiya · sushi &amp; izakaya</title>
+        <meta
+            name="description"
+            content="Twelve seats, one hinoki counter, and a koi pond you're welcome to feed."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=DM+Mono:wght@400;500&family=DotGothic16&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body data-page="home">
+        <canvas id="pond" aria-hidden="true"></canvas>
+
+        <div class="chrome">
+            <nav class="nav" data-avoid aria-label="Main">
+                <a class="home" href="#home">Namiya</a><a href="#menu">Menu</a
+                ><a href="#omakase">Omakase</a><a href="#visit">Visit</a>
+            </nav>
+            <div class="meta" data-avoid>
+                <span class="open">open tonight · 5:30–10</span
+                ><a class="phone" href="#">(718) 555-0142</a>
+            </div>
+            <a class="mon" href="#home" data-avoid aria-label="Home">波</a>
+            <p class="count" data-avoid aria-live="polite">
+                <b id="kc">5</b> koi · <b id="fc">0</b> fed tonight
+            </p>
+            <p class="hint" data-avoid>tap the water to feed the koi</p>
+        </div>
+
+        <main class="page" data-page="home" aria-label="Home">
+            <div class="center rise" data-avoid>
+                <h1>Namiya</h1>
+                <p class="role">Sushi &amp; izakaya · Brooklyn</p>
+                <p class="lede">
+                    <b>Twelve seats, one hinoki counter.</b> A menu that changes with whatever came
+                    off the boat this morning, and a koi pond you're welcome to feed.
+                </p>
+                <div class="ctas">
+                    <a class="pill dark" href="#visit">Reserve a seat ↗</a
+                    ><a class="pill" href="#menu">Tonight's menu</a>
+                </div>
+            </div>
+        </main>
+
+        <section class="page" data-page="menu" aria-label="Menu">
+            <div class="wrap">
+                <header class="phead rise" data-avoid>
+                    <p class="role">お品書き · tonight's menu</p>
+                    <h2>What came in this morning</h2>
+                    <p class="lede">
+                        Prices are per plate. It changes daily with the catch, so ask the counter
+                        what's good. The koi are not on it.
+                    </p>
+                </header>
+                <div class="cols rise">
+                    <div class="card" data-avoid>
+                        <h3>Nigiri <span>two pieces</span></h3>
+                        <ul class="list">
+                            <li>
+                                <span class="jp">赤身</span><b>Akami</b><em>9</em
+                                ><i>lean bluefin, aged four days</i>
+                            </li>
+                            <li>
+                                <span class="jp">鰤</span><b>Buri</b><em>10</em
+                                ><i>winter yellowtail, yuzu kosho</i>
+                            </li>
+                            <li>
+                                <span class="jp">帆立</span><b>Hotate</b><em>11</em
+                                ><i>Hokkaido scallop, sea salt, lime</i>
+                            </li>
+                            <li>
+                                <span class="jp">鮭</span><b>Sake</b><em>9</em
+                                ><i>salmon belly, lightly torched</i>
+                            </li>
+                            <li>
+                                <span class="jp">鰻</span><b>Unagi</b><em>12</em
+                                ><i>freshwater eel, house tare</i>
+                            </li>
+                            <li>
+                                <span class="jp">玉子</span><b>Tamago</b><em>6</em
+                                ><i>sweet layered omelette</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card" data-avoid>
+                        <h3>Small plates <span>to share</span></h3>
+                        <ul class="list">
+                            <li>
+                                <span class="jp">枝豆</span><b>Edamame</b><em>6</em
+                                ><i>smoked salt, shichimi</i>
+                            </li>
+                            <li>
+                                <span class="jp">揚出</span><b>Agedashi tofu</b><em>9</em
+                                ><i>dashi, grated daikon, bonito</i>
+                            </li>
+                            <li>
+                                <span class="jp">唐揚</span><b>Karaage</b><em>12</em
+                                ><i>fried chicken thigh, lemon, kewpie</i>
+                            </li>
+                            <li>
+                                <span class="jp">茶碗</span><b>Chawanmushi</b><em>11</em
+                                ><i>silken egg custard, crab, mitsuba</i>
+                            </li>
+                            <li>
+                                <span class="jp">焼鳥</span><b>Negima</b><em>10</em
+                                ><i>chicken &amp; scallion skewers, tare</i>
+                            </li>
+                            <li>
+                                <span class="jp">田楽</span><b>Nasu dengaku</b><em>9</em
+                                ><i>miso-glazed eggplant</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card" data-avoid>
+                        <h3>To drink <span>by the glass</span></h3>
+                        <ul class="list">
+                            <li>
+                                <span class="jp">酒</span><b>Junmai daiginjo</b><em>16</em
+                                ><i>clean, melon, very cold</i>
+                            </li>
+                            <li>
+                                <span class="jp">酒</span><b>Tokubetsu junmai</b><em>13</em
+                                ><i>dry, rice, good warm</i>
+                            </li>
+                            <li>
+                                <span class="jp">濁</span><b>Nigori</b><em>12</em
+                                ><i>cloudy, creamy, a little sweet</i>
+                            </li>
+                            <li>
+                                <span class="jp">杯</span><b>Highball</b><em>12</em
+                                ><i>Japanese whisky, lots of bubbles</i>
+                            </li>
+                            <li>
+                                <span class="jp">柚</span><b>Yuzu sour</b><em>11</em
+                                ><i>shochu, yuzu, soda</i>
+                            </li>
+                            <li>
+                                <span class="jp">茶</span><b>Hojicha</b><em>5</em
+                                ><i>roasted green tea, no alcohol</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="note rise">
+                    kitchen closes 30 minutes before the dining room · ask us about allergies
+                </p>
+            </div>
+        </section>
+
+        <section class="page" data-page="omakase" aria-label="Omakase">
+            <div class="wrap oma">
+                <div class="rise" data-avoid>
+                    <p class="role">おまかせ · at the counter</p>
+                    <h2>Leave it to us</h2>
+                    <p class="lede">
+                        Twelve seats, one sitting at a time. The chef builds the meal as it goes,
+                        from light to rich, ending somewhere sweet.
+                    </p>
+                    <div class="facts">
+                        <div><b>14</b>courses</div>
+                        <div><b>$145</b>per guest</div>
+                        <div><b>2 hrs</b>give or take</div>
+                        <div><b>6 &amp; 8:30</b>Thu – Sun</div>
+                    </div>
+                    <div class="ctas">
+                        <a class="pill dark" href="#visit">Reserve the counter ↗</a>
+                    </div>
+                </div>
+                <div class="card rise" data-avoid>
+                    <h3>A recent night <span>changes daily</span></h3>
+                    <ol class="courses">
+                        <li><span>一</span>chawanmushi</li>
+                        <li><span>二</span>kombu-cured snapper</li>
+                        <li><span>三</span>scallop &amp; lime</li>
+                        <li><span>四</span>seared bonito</li>
+                        <li><span>五</span>akami</li>
+                        <li><span>六</span>chutoro</li>
+                        <li><span>七</span>otoro</li>
+                        <li><span>八</span>kinmedai</li>
+                        <li><span>九</span>kohada</li>
+                        <li><span>十</span>uni hand roll</li>
+                        <li><span>十一</span>anago</li>
+                        <li><span>十二</span>miso soup</li>
+                        <li><span>十三</span>tamago</li>
+                        <li><span>十四</span>hojicha &amp; mochi</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="visit" aria-label="Visit">
+            <div class="wrap visit">
+                <div class="rise" data-avoid>
+                    <p class="role">訪問 · visit</p>
+                    <h2>Come sit by the pond</h2>
+                    <p class="lede">
+                        Walk-ins are welcome at the bar. The pond is out back, and the koi will want
+                        to meet you.
+                    </p>
+                    <dl class="info">
+                        <dt>Address</dt>
+                        <dd>214 Mercer Lane<br />Brooklyn, NY 11201</dd>
+                        <dt>Hours</dt>
+                        <dd>
+                            Tue – Thu · 5:30 – 10<br />Fri – Sat · 5:30 – 11<br />Sun · 5 – 9 · Mon
+                            closed
+                        </dd>
+                        <dt>Phone</dt>
+                        <dd><a href="#">(718) 555-0142</a></dd>
+                        <dt>Email</dt>
+                        <dd><a href="#">hello@namiya.example</a></dd>
+                    </dl>
+                </div>
+                <form class="card rise" id="resv" data-avoid novalidate>
+                    <h3>Reserve a seat <span>held 15 min</span></h3>
+                    <div class="field">
+                        <label for="rdate">Date</label><input type="date" id="rdate" />
+                    </div>
+                    <div class="field">
+                        <span>Guests</span>
+                        <div class="chips" data-group="party">
+                            <button type="button">1</button
+                            ><button type="button" aria-pressed="true">2</button
+                            ><button type="button">3</button><button type="button">4</button
+                            ><button type="button">5</button><button type="button">6</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <span>Time</span>
+                        <div class="chips" data-group="time">
+                            <button type="button">5:30</button><button type="button">6:00</button
+                            ><button type="button" aria-pressed="true">7:00</button
+                            ><button type="button">7:30</button><button type="button">8:30</button
+                            ><button type="button">9:00</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="rname">Name</label
+                        ><input id="rname" autocomplete="name" placeholder="Your name" />
+                    </div>
+                    <button class="pill dark" type="submit">Hold my seats</button>
+                    <p class="done" role="status" id="done"></p>
+                </form>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
