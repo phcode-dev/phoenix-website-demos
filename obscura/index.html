@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Obscura M1 · See in the dark</title>
+        <meta
+            name="description"
+            content="Obscura M1. A camera built for the hour after sunset. f/1.2, 61 megapixels, dials not menus."
+        />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="stylesheet" href="styles.css" />
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header class="gnav">
+            <div class="wrap">
+                <a class="brand" href="#top" aria-label="Obscura home"><i></i>Obscura</a>
+                <nav aria-label="Global">
+                    <a href="#top">Cameras</a><a href="#stage">Lenses</a
+                    ><a href="#gallery">Stories</a><a href="#specs">Support</a>
+                </nav>
+                <a class="bag" href="#buy" aria-label="Bag"
+                    ><svg viewBox="0 0 15 17">
+                        <path d="M2 5h11l-.8 11H2.8z" />
+                        <path d="M5 5V3.6a2.5 2.5 0 0 1 5 0V5" /></svg
+                    ><b id="bagCount">0</b></a
+                >
+            </div>
+        </header>
+
+        <div class="pnav" id="top">
+            <div class="wrap">
+                <h2>Obscura M1</h2>
+                <div class="r">
+                    <a href="#top">Overview</a><a href="#specs">Tech Specs</a
+                    ><a class="pill sm" href="#buy">Buy</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="stage" id="stage" aria-label="Obscura M1, a 3D tour">
+            <div class="stage-sticky" id="stageSticky">
+                <canvas
+                    id="gl"
+                    aria-label="Interactive 3D model of the Obscura M1 camera. Drag to turn it."
+                ></canvas>
+                <img
+                    class="fallback"
+                    src="https://images.unsplash.com/photo-1615570311213-985a79f3dd5a?auto=format&fit=crop&w=1600&q=80"
+                    alt="Obscura M1 camera"
+                />
+                <div class="loader" id="loader"><i></i></div>
+                <span class="hint">Drag to turn</span>
+                <div class="dots" aria-hidden="true">
+                    <i class="on"></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+
+                <div class="chap top on" data-c="0">
+                    <p class="eyebrow">Obscura M1</p>
+                    <h1>See in the dark.</h1>
+                    <p class="sub">61 megapixels. f/1.2. Built for the hour after sunset.</p>
+                    <div class="ctas">
+                        <a class="pill" href="#buy">Buy</a
+                        ><a class="link" href="#night">See it at night ›</a>
+                    </div>
+                </div>
+                <div class="chap side" data-c="1">
+                    <p class="k">Lens</p>
+                    <h3>A lens that drinks light.</h3>
+                    <p class="d">
+                        The Noct 50mm opens to <b>f/1.2</b>, four times the light of an f/2.8 zoom.
+                        Streetlights become stars; faces stay sharp.
+                    </p>
+                </div>
+                <div class="chap side right" data-c="2">
+                    <p class="k">Controls</p>
+                    <h3>Dials, not menus.</h3>
+                    <p class="d">
+                        Shutter, ISO and film-speed reminder live on <b>machined dials</b> you set
+                        by feel, camera still off.
+                    </p>
+                </div>
+                <div class="chap side" data-c="3">
+                    <h3>Every stop, engraved.</h3>
+                    <p class="k">Craft</p>
+                    <p class="d">
+                        Aperture and focus scales are <b>engraved and paint-filled</b>, so they
+                        never rub off.
+                    </p>
+                </div>
+                <div class="chap side right" data-c="4">
+                    <p class="k">Shutter</p>
+                    <h3>Silent as a held breath.</h3>
+                    <p class="d">
+                        A fully electronic shutter at <b>1/32,000 s</b>, without a sound.
+                    </p>
+                </div>
+                <div class="chap top" data-c="5">
+                    <p class="eyebrow">Obscura M1</p>
+                    <h1>From $2,499.</h1>
+                    <div class="ctas">
+                        <a class="pill" href="#buy">Buy</a
+                        ><a class="link" href="#specs">Tech specs ›</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="statement">
+            <div class="wrap">
+                <p id="statement">
+                    Most cameras are built for daylight. M1 was built for everything that happens
+                    after.
+                </p>
+            </div>
+        </section>
+
+        <section class="light numbers" id="numbers">
+            <div class="wrap">
+                <h2 class="sec-head">Small body. <span>Unreasonable numbers.</span></h2>
+                <div class="grid">
+                    <div class="cell">
+                        <div class="v grad" data-count="61">0<small>MP</small></div>
+                        <p>
+                            <b>Full-frame sensor</b> with backside illumination and dual native ISO.
+                        </p>
+                    </div>
+                    <div class="cell">
+                        <div class="v" data-count="409600">0</div>
+                        <p><b>Maximum ISO.</b> Usable files at 25,600 straight out of camera.</p>
+                    </div>
+                    <div class="cell">
+                        <div class="v" data-count="8">0<small>stops</small></div>
+                        <p><b>In-body stabilisation.</b> Handheld half-second exposures, sharp.</p>
+                    </div>
+                    <div class="cell">
+                        <div class="v" data-count="120">0<small>fps</small></div>
+                        <p><b>4K video</b> in 10-bit, with a log profile that keeps the shadows.</p>
+                    </div>
+                    <div class="cell">
+                        <div class="v grad" data-count="16">0<small>stops</small></div>
+                        <p>
+                            <b>Dynamic range.</b> Neon signs and the alley beside them, in one
+                            frame.
+                        </p>
+                    </div>
+                    <div class="cell">
+                        <div class="v" data-count="520">0<small>g</small></div>
+                        <p><b>Body weight,</b> battery in. Lighter than a bottle of water.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="night" id="night">
+            <div class="wrap">
+                <h2 class="sec-head">Night, <span>without the noise.</span></h2>
+                <p class="lede">
+                    Drag across the photo. On the left, a typical camera at ISO 12,800. On the
+                    right, M1 with Night Engine. Same street, same second.
+                </p>
+                <div
+                    class="compare"
+                    id="compare"
+                    role="slider"
+                    aria-label="Compare typical camera and Obscura M1"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="50"
+                    tabindex="0"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1670960763844-10278a725ac7?auto=format&fit=crop&w=2000&q=80"
+                        alt="Rainy neon street at night, shot on M1"
+                        loading="lazy"
+                    />
+                    <img
+                        class="before"
+                        src="https://images.unsplash.com/photo-1670960763844-10278a725ac7?auto=format&fit=crop&w=2000&q=80"
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                    />
+                    <div class="noise"></div>
+                    <span class="lab l">Typical camera</span><span class="lab r">Obscura M1</span>
+                    <div class="bar"></div>
+                    <div class="knob" aria-hidden="true">⇆</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div
+                class="wrap"
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    gap: 20px;
+                "
+            >
+                <h2 class="sec-head" style="font-size: clamp(36px, 4.6vw, 64px)">
+                    Made after dark.
+                </h2>
+                <div class="strip-ctrl">
+                    <button id="prev" aria-label="Previous photos">‹</button
+                    ><button id="next" aria-label="Next photos">›</button>
+                </div>
+            </div>
+            <div class="strip" id="strip">
+                <figure>
+                    <div class="ph">
+                        <img
+                            src="https://images.unsplash.com/photo-1701865186052-7741b965ceac?auto=format&fit=crop&w=900&q=80"
+                            alt="Figure with umbrella in neon rain"
+                            loading="lazy"
+                        />
+                    </div>
+                    <figcaption><b>Tokyo, 23:40</b> · f/1.2 · 1/125 · ISO 6400</figcaption>
+                </figure>
+                <figure class="wide">
+                    <div class="ph">
+                        <img
+                            src="https://images.unsplash.com/photo-1791176880975-eb960cfcb904?auto=format&fit=crop&w=1400&q=80"
+                            alt="Milky Way over a dark lake"
+                            loading="lazy"
+                        />
+                    </div>
+                    <figcaption><b>Lake, 02:10</b> · f/1.2 · 8 s · ISO 3200</figcaption>
+                </figure>
+                <figure>
+                    <div class="ph">
+                        <img
+                            src="https://images.unsplash.com/photo-1774016591255-10545a911cb2?auto=format&fit=crop&w=900&q=80"
+                            alt="Portrait lit by a single spotlight"
+                            loading="lazy"
+                        />
+                    </div>
+                    <figcaption><b>Studio, one light</b> · f/1.4 · 1/250 · ISO 800</figcaption>
+                </figure>
+                <figure>
+                    <div class="ph">
+                        <img
+                            src="https://images.unsplash.com/photo-1784148212007-f7364da25f90?auto=format&fit=crop&w=900&q=80"
+                            alt="Portrait in deep red light"
+                            loading="lazy"
+                        />
+                    </div>
+                    <figcaption><b>Darkroom red</b> · f/1.2 · 1/60 · ISO 12,800</figcaption>
+                </figure>
+                <figure>
+                    <div class="ph">
+                        <img
+                            src="https://images.unsplash.com/photo-1735606489022-59cb0a16d88b?auto=format&fit=crop&w=900&q=80"
+                            alt="Stars over a mountain range"
+                            loading="lazy"
+                        />
+                    </div>
+                    <figcaption><b>Ridge, 03:30</b> · f/1.2 · 10 s · ISO 2500</figcaption>
+                </figure>
+                <figure>
+                    <div class="ph">
+                        <img
+                            src="https://images.unsplash.com/photo-1700836632004-f5a480212386?auto=format&fit=crop&w=900&q=80"
+                            alt="Busy rainy street at night"
+                            loading="lazy"
+                        />
+                    </div>
+                    <figcaption><b>Shinjuku, rain</b> · f/2 · 1/60 · ISO 10,000</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="light buy" id="buy">
+            <div class="wrap">
+                <h2 class="sec-head">Buy Obscura M1.</h2>
+                <div class="buy-grid">
+                    <div class="viewer" id="viewer">
+                        <canvas id="gl2" aria-label="Rotatable 3D view of Obscura M1"></canvas
+                        ><span class="vt">Drag to inspect</span>
+                    </div>
+                    <div>
+                        <p class="opt-h">Kit. <span>Which one is right for you?</span></p>
+                        <div class="opts" id="opts">
+                            <button class="opt" data-price="2499" aria-pressed="false">
+                                <span><b>Body only</b><small>Bring your own glass</small></span
+                                ><span class="p">$2,499</span>
+                            </button>
+                            <button class="opt" data-price="3899" aria-pressed="true">
+                                <span
+                                    ><b>With Noct 50mm f/1.2</b
+                                    ><small>The low-light pairing</small></span
+                                ><span class="p">$3,899</span>
+                            </button>
+                            <button class="opt" data-price="4599" aria-pressed="false">
+                                <span
+                                    ><b>Night Creator kit</b
+                                    ><small
+                                        >50mm + 28mm f/1.4, leather strap, 2 batteries</small
+                                    ></span
+                                ><span class="p">$4,599</span>
+                            </button>
+                        </div>
+                        <div class="summary">
+                            <div class="total">
+                                <span>Total</span
+                                ><span
+                                    ><span id="total">$3,899</span>
+                                    <small id="monthly">or $324.92/mo.</small></span
+                                >
+                            </div>
+                            <button class="add" id="add">Add to Bag</button>
+                            <p class="added" id="added">✓ Added to your bag. Ships in 2–3 days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="light specs" id="specs">
+            <div class="wrap">
+                <h2>Tech Specs</h2>
+                <details open>
+                    <summary>Sensor</summary>
+                    <div class="spec-body">
+                        <span><b>61 MP full-frame BSI</b>Dual native ISO 800 / 6400</span
+                        ><span><b>ISO 50 – 409,600</b>Extended range</span
+                        ><span><b>16 stops</b>Dynamic range at base ISO</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Lens &amp; mount</summary>
+                    <div class="spec-body">
+                        <span><b>O-mount</b>20 mm flange distance</span
+                        ><span><b>Noct 50mm f/1.2</b>11 elements, 9 aperture blades</span
+                        ><span><b>8-stop IBIS</b>5-axis, with lens sync</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Video</summary>
+                    <div class="spec-body">
+                        <span><b>4K 120p, 10-bit</b>O-Log and HLG</span
+                        ><span><b>8K 30p</b>Oversampled from full sensor</span
+                        ><span><b>Unlimited recording</b>Passive heatsink</span>
+                    </div>
+                </details>
+                <details>
+                    <summary>Body</summary>
+                    <div class="spec-body">
+                        <span><b>520 g</b>Magnesium and brass</span
+                        ><span><b>IP54</b>Weather-sealed, 41 seals</span
+                        ><span><b>USB-C 20 Gb/s</b>Tethering and charging</span>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <footer>
+            <div class="wrap">
+                <p>
+                    Obscura and Obscura M1 are fictional, created for a Phoenix Code demo.
+                    Specifications, prices and sample captions are invented. 3D model: “Camera 01”
+                    by Rajil Jose Macatangay, Poly Haven (CC0), rebranded in the browser.
+                    Photography via Unsplash: Nicolas Caetano, masahiro miyagi, Nicolas Häns,
+                    Cemrecan Yurtman, Lauraanj, Philipp Düsel, Yohan Marion.
+                </p>
+                <p>
+                    Copyright © 2026 Obscura Optical (not a real company). Built in Phoenix Code
+                    with Claude.
+                </p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+
+        <script type="module" src="camera.js"></script>
+    </body>
+</html>
