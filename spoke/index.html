@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Spoke · A year on two wheels</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="progress" id="progress"></div>
+        <header class="top">
+            <div class="brand"><i></i>Spoke · Annual Report 2026</div>
+            <nav>
+                <a href="#year">The year</a><a href="#rhythm">The rhythm</a><a href="#you">You</a
+                ><a href="#numbers">Numbers</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <canvas id="streaks" aria-hidden="true"></canvas>
+            <div class="hero-copy">
+                <div class="kicker">Port Avalon bike share · 2026 in review</div>
+                <h1>A year on<br /><em>two wheels.</em></h1>
+                <div class="hero-num">
+                    <b id="heroCount">0</b
+                    ><span
+                        >rides across 212 stations. Each streak above is one of them,
+                        replayed.</span
+                    >
+                </div>
+            </div>
+            <div class="scroll-cue">Scroll the year</div>
+        </section>
+
+        <main>
+            <div class="wrap" id="year">
+                <div class="chapter-head reveal">
+                    <div class="num">Chapter one</div>
+                    <h2>Summer carried us. A storm in November nearly didn't.</h2>
+                    <p>
+                        Monthly rides rose from 210K in January to a July peak, then fell off a
+                        cliff in November. Scroll to step through the year.
+                    </p>
+                </div>
+                <div class="scrolly">
+                    <div class="steps">
+                        <div class="step" data-step="0">
+                            <div>
+                                <h3>Rides follow the sun.</h3>
+                                <p>
+                                    Every month from January to July beat the one before it. July
+                                    hit <strong>512K rides</strong>, about 16,500 a day.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" data-step="1">
+                            <div>
+                                <h3>Then, Storm Ilse.</h3>
+                                <p>
+                                    Eleven days of flood closures along the harbour cut November to
+                                    <strong>196K</strong>, less than half of September.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div>
+                                <h3>Underneath, the fleet was changing.</h3>
+                                <p>
+                                    Split by bike type, e-bikes grow every single month, from 31% of
+                                    rides in January to 58% in December.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div>
+                                <h3>September: the e-bike majority.</h3>
+                                <p>
+                                    For the first time, more people chose to ride with a motor than
+                                    without one. They haven't gone back.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sticky">
+                        <figure class="figure" id="monthFig">
+                            <div class="fig-title" id="monthTitle">Rides per month, 2026</div>
+                            <div class="fig-sub" id="monthSub">All bike types</div>
+                            <div class="legend" id="monthLegend" style="opacity: 0">
+                                <span
+                                    ><i class="sq" style="background: var(--series-1)"></i
+                                    >Classic</span
+                                ><span
+                                    ><i class="sq" style="background: var(--series-2)"></i
+                                    >E-bike</span
+                                >
+                            </div>
+                            <svg
+                                id="monthChart"
+                                viewBox="0 0 640 400"
+                                width="100%"
+                                role="img"
+                                aria-label="Column chart of monthly rides in 2026"
+                            ></svg>
+                            <details class="table">
+                                <summary>View as table</summary>
+                                <table id="monthTable"></table>
+                            </details>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap" id="rhythm">
+                <div class="chapter-head reveal">
+                    <div class="num">Chapter two</div>
+                    <h2 id="rhythmHead">The city breathes in at 8:15.</h2>
+                    <p>
+                        On weekdays, rides follow two sharp commute peaks. Weekends are one slow,
+                        sunny hill. Hover the chart to read any 15 minutes of an average day.
+                    </p>
+                </div>
+                <figure class="figure reveal">
+                    <div class="fig-title">Average rides starting per 15 minutes</div>
+                    <div class="fig-sub">Weekdays vs weekends, all of 2026</div>
+                    <div class="legend">
+                        <span><i style="background: var(--series-1)"></i>Weekday</span
+                        ><span><i style="background: var(--series-2)"></i>Weekend</span>
+                    </div>
+                    <svg
+                        id="hourChart"
+                        viewBox="0 0 1080 380"
+                        width="100%"
+                        role="img"
+                        aria-label="Line chart of rides by time of day, weekday versus weekend"
+                    ></svg>
+                    <details class="table">
+                        <summary>View as table</summary>
+                        <table id="hourTable"></table>
+                    </details>
+                </figure>
+                <div class="rhythm-note reveal" id="rhythmNote"></div>
+            </div>
+
+            <div class="wrap" id="you">
+                <div class="chapter-head reveal">
+                    <div class="num">Chapter three</div>
+                    <h2>You were never riding alone.</h2>
+                    <p>
+                        Pick a day and an hour. We'll tell you roughly how many people were riding
+                        through Port Avalon with you.
+                    </p>
+                </div>
+                <div class="you">
+                    <figure class="figure reveal">
+                        <div class="fig-title">Average rides per hour, by day of week</div>
+                        <div class="fig-sub">Darker means busier</div>
+                        <svg
+                            id="heat"
+                            viewBox="0 0 760 300"
+                            width="100%"
+                            role="img"
+                            aria-label="Heatmap of rides by weekday and hour"
+                        ></svg>
+                        <div class="legend" style="align-items: center">
+                            <span>Fewer</span
+                            ><svg width="140" height="10" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="seqg">
+                                        <stop offset="0" stop-color="#cde2fb" />
+                                        <stop offset=".5" stop-color="#3987e5" />
+                                        <stop offset="1" stop-color="#0d366b" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="140" height="10" rx="3" fill="url(#seqg)" /></svg
+                            ><span>More</span>
+                        </div>
+                    </figure>
+                    <aside class="you-panel reveal">
+                        <div class="sentence" id="youSentence"></div>
+                        <div class="days" id="days" role="group" aria-label="Day of week"></div>
+                        <div class="slider">
+                            <label for="hour"><span>Hour</span><span id="hourLbl"></span></label
+                            ><input type="range" id="hour" min="0" max="23" value="8" />
+                        </div>
+                        <div class="riders" id="riders" aria-hidden="true"></div>
+                        <div class="riders-key">Each dot is 10 riders.</div>
+                    </aside>
+                </div>
+            </div>
+
+            <div class="wrap" id="numbers">
+                <div class="chapter-head reveal">
+                    <div class="num">Chapter four</div>
+                    <h2>The rest, in four numbers.</h2>
+                </div>
+                <div class="tiles">
+                    <div class="tile reveal">
+                        <div class="label">Average ride</div>
+                        <div>
+                            <div class="value" data-count="14" data-suffix=" min">0</div>
+                            <div class="note">down from 17 min in 2025</div>
+                        </div>
+                    </div>
+                    <div class="tile reveal">
+                        <div class="label">Longest single ride</div>
+                        <div>
+                            <div class="value">7h 42m</div>
+                            <div class="note">
+                                Harbour Steps → Harbour Steps. We have questions.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile reveal">
+                        <div class="label">Busiest station</div>
+                        <div>
+                            <div class="value" style="font-size: 34px">Harbour Steps</div>
+                            <div class="note">391,204 departures</div>
+                        </div>
+                    </div>
+                    <div class="tile reveal">
+                        <div class="label">Car trips replaced (est.)</div>
+                        <div>
+                            <div class="value" data-count="1190" data-suffix=" t">0</div>
+                            <div class="note">CO₂ not emitted</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="outro wrap reveal">
+                <h2>See you on the<br /><em>road in 2027.</em></h2>
+                <p>
+                    Thanks for every ride, every 8:15 dash and every slow Sunday loop around the
+                    harbour.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <span
+                >Spoke and Port Avalon are fictional. All figures are generated placeholder
+                data.</span
+            >
+            <span>Built in Phoenix Code with Claude</span>
+        </footer>
+
+        <div class="tip" id="tip"></div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
