@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="theme-color" content="#f4ebd6" />
+        <title>Forno Nero — Good things inside.</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <main>
+            <section class="hero" id="hero" aria-label="Forno Nero pizza box">
+                <header class="masthead">
+                    <a class="wordmark" href="#hero" aria-label="Forno Nero home"
+                        >FORNO<span>NERO</span></a
+                    ><span class="edition">Good things come together.</span>
+                    <nav class="nav" aria-label="Main navigation">
+                        <a href="#menu">The menu</a><a href="#recipe">Our recipe</a>
+                    </nav>
+                </header>
+                <span class="side-note">Wood-fired. Made to share.</span>
+                <div class="stage" id="stage" aria-label="Drag upward to open the pizza box">
+                    <div class="box-position" id="position">
+                        <div class="box" id="box">
+                            <div class="ground" id="ground"></div>
+                            <div class="tray"><div class="liner"></div></div>
+                            <div class="flap left" id="leftFlap"></div>
+                            <div class="flap right" id="rightFlap"></div>
+                            <img
+                                class="pizza"
+                                id="pizza"
+                                src="images/pizza.png"
+                                alt="Freshly baked pizza with browned crust, melted cheese, tomato and pepperoni"
+                                draggable="false"
+                                fetchpriority="high"
+                            />
+                            <div class="lid-shadow" id="shadow"></div>
+                            <div class="wall front-wall">FORNO NERO</div>
+                            <div class="wall left-wall"></div>
+                            <div class="wall right-wall"></div>
+                            <div class="lid" id="lid">
+                                <div class="lid-face lid-front">
+                                    <span class="box-brand">FORNO NERO</span>
+                                    <h1 class="cover-title">
+                                        <span>GOOD</span><span>THINGS.</span><em>inside.</em>
+                                    </h1>
+                                    <span class="box-bottom">Open for good things</span>
+                                </div>
+                                <div class="lid-face lid-back">
+                                    <div class="inside-title">
+                                        <span>GOOD THINGS</span><span>INSIDE.</span>
+                                    </div>
+                                    <span class="inside-note">Save someone a slice.</span>
+                                </div>
+                                <div class="lid-tab"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-bottom">
+                    <p class="support">A little box.<br /><em>A very good idea.</em></p>
+                    <div class="interaction">
+                        <button
+                            class="toggle"
+                            id="toggle"
+                            aria-pressed="false"
+                            aria-controls="stage"
+                        >
+                            Open the box <span>↗</span>
+                        </button>
+                        <p class="hint" id="hint">Or drag the lid upward</p>
+                    </div>
+                </div>
+                <p class="diagnostic" id="diagnostic" role="status" hidden></p>
+            </section>
+            <section class="menu-section" id="menu" aria-labelledby="menu-title">
+                <div class="menu-layout">
+                    <div class="menu-editorial">
+                        <p class="receipt-kicker">01 / For the table</p>
+                        <h2 id="menu-title">Good taste.<br /><em>No fuss.</em></h2>
+                        <p class="section-copy">
+                            A short menu. A few very good ingredients. The kind of pizza that turns
+                            “just one slice” into an empty box.
+                        </p>
+                        <p class="section-copy">
+                            Pick a favourite. Put it in the middle. Let everyone reach in.
+                        </p>
+                        <a class="text-link" href="#recipe"
+                            >Our recipe for a good night <span>↓</span></a
+                        >
+                        <div class="menu-footnote">WOOD-FIRED.<br />MADE TO SHARE.</div>
+                    </div>
+                    <div class="receipt">
+                        <div class="receipt-menu">
+                            <header class="receipt-head">
+                                <h3>FORNO NERO</h3>
+                                <p>A few good things<br />to put in the middle.</p>
+                            </header>
+                            <div class="receipt-meta">
+                                <span>The short list</span><span>EUR</span>
+                            </div>
+                            <dl class="menu-list">
+                                <div class="menu-item">
+                                    <dt>Margherita <span class="price">14.00</span></dt>
+                                    <dd>
+                                        Tomato, fior di latte, basil.<br />The reason we keep it
+                                        simple.
+                                    </dd>
+                                </div>
+                                <div class="menu-item">
+                                    <dt>Diavola <span class="price">17.00</span></dt>
+                                    <dd>
+                                        Tomato, mozzarella, spicy salami.<br />A little heat. A lot
+                                        to love.
+                                    </dd>
+                                </div>
+                                <div class="menu-item">
+                                    <dt>Funghi <span class="price">16.00</span></dt>
+                                    <dd>
+                                        Mushrooms, mozzarella, thyme.<br />Earthy, golden, gone in
+                                        minutes.
+                                    </dd>
+                                </div>
+                            </dl>
+                            <div class="receipt-total">
+                                <span>Best served</span><strong>In good<br />company.</strong>
+                            </div>
+                            <p class="sample-note">Illustrative menu · fictional pizzeria</p>
+                            <div class="barcode" aria-hidden="true"></div>
+                            <p class="receipt-foot">THANKS FOR SHARING.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="story-section" id="recipe" aria-labelledby="recipe-title">
+                <div class="story-layout">
+                    <figure class="story-photo">
+                        <img
+                            src="images/story.jpg"
+                            alt="A freshly baked pizza on a baking tray, photographed from above on a wooden table"
+                            width="1080"
+                            height="1080"
+                            loading="lazy"
+                        />
+                        <figcaption>Made for the middle of the table.</figcaption>
+                    </figure>
+                    <div class="story-copy">
+                        <p class="receipt-kicker">02 / The good part</p>
+                        <h2 id="recipe-title">Nothing fancy.<br /><em>Just together.</em></h2>
+                        <p class="section-copy">
+                            Good food is only half of it. The other half is who you share it with.
+                            Around here, the recipe for a good night is pretty simple.
+                        </p>
+                        <ol class="recipe-list">
+                            <li>Bring someone who always steals a slice.</li>
+                            <li>Put the box in the middle. Phones to the side.</li>
+                            <li>Take the last piece. Or be a very good friend.</li>
+                        </ol>
+                        <a class="text-link" href="#hero" id="back"
+                            >Back for seconds <span>↗</span></a
+                        >
+                    </div>
+                </div>
+            </section>
+            <footer class="site-footer" id="note">
+                <div class="footer-top">
+                    <p>Good things inside.<br />Even better together.</p>
+                    <nav aria-label="Footer navigation">
+                        <a href="#menu">The menu</a><a href="#recipe">Our recipe</a
+                        ><a href="#hero">Back to top ↑</a>
+                    </nav>
+                </div>
+                <div class="footer-name" aria-hidden="true">FORNO NERO</div>
+                <div class="footer-bottom">
+                    <p>
+                        Fictional pizzeria · Campaign study for Phoenix Code.<br />Menu and prices
+                        are illustrative.
+                    </p>
+                    <details id="credits">
+                        <summary>Image &amp; type credits</summary>
+                        <p>
+                            Pizza photography by
+                            <a href="https://unsplash.com/@thisisnando">Fernando Andrade</a> on
+                            <a href="https://unsplash.com/photos/_P76trHTWDE">Unsplash</a>, under
+                            the <a href="https://unsplash.com/license">Unsplash License</a>. The
+                            hero uses AI-assisted background extraction; the story shows the
+                            original photograph.
+                        </p>
+                        <p>
+                            Fraunces by Undercase Type —
+                            <a href="fonts/OFL.txt">SIL Open Font License</a>. Supporting type:
+                            Courier New. Fictional packaging artwork created for this campaign.
+                        </p>
+                    </details>
+                </div>
+            </footer>
+        </main>
+        <div class="debug" id="debug" hidden>
+            <button id="play">Play 5s</button><button id="reset">Reset</button
+            ><input
+                id="scrub"
+                type="range"
+                min="0"
+                max="1"
+                step=".001"
+                value="0"
+                aria-label="Box opening progress"
+            />
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
