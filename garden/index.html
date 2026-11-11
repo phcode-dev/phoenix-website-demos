@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Endless garden · Small software, grown slowly</title>
+        <meta name="description" content="A garden that never ends." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <canvas
+            id="world"
+            aria-label="An endless pixel garden. Drag sideways to wander, tap flowers and the sky."
+        ></canvas>
+
+        <div class="ui" id="top">
+            <nav class="top">
+                <button class="px ghost" id="menuBtn" aria-haspopup="dialog" aria-controls="menu">
+                    ☰ menu
+                </button>
+                <button id="theme" aria-label="Switch to dusk">☼</button>
+            </nav>
+            <div class="count" aria-live="polite">
+                <div><b id="cPetals">0</b> petals</div>
+                <div>
+                    <button id="cSeedsBtn" title="Walk to your flowers">
+                        <b id="cSeeds">0</b> your flowers ↦
+                    </button>
+                </div>
+                <div><b id="cFound">0</b> finds</div>
+                <div><b id="cWalk">0</b> m walked</div>
+            </div>
+
+            <section class="hero">
+                <p class="poem">in a world of loud things,<br />grow something small</p>
+                <p class="hello">
+                    Hi, I'm Millie.<span class="caret" aria-hidden="true"></span><br />
+                    I make quiet software and tiny games.<br />
+                    Before that, a few <a href="#">small studios</a> and one
+                    <a href="#">very large company</a>.<br />
+                    Currently, tending this garden and
+                    <a href="#" data-open="notes">writing notes</a>.
+                </p>
+                <div class="actions"><button class="px" id="seed">✿ plant a seed</button></div>
+            </section>
+
+            <p class="toast" id="toast" role="status"></p>
+            <p class="hint" id="hint">
+                drag the garden · tap a flower · tap the sky to call a butterfly · keep walking,
+                things are hiding · press M for the menu
+            </p>
+            <p class="credit">every pixel drawn in code<br />made in Phoenix Code with Claude</p>
+        </div>
+
+        <div class="menu" id="menu" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+            <div class="box">
+                <div class="mhead">
+                    <span id="mtitle">✿ menu · Millie's garden</span
+                    ><button id="mclose" aria-label="Close menu">esc ✕</button>
+                </div>
+                <div class="mbody">
+                    <div class="tabs" role="tablist" aria-label="Menu">
+                        <button role="tab" data-tab="work">work</button>
+                        <button role="tab" data-tab="notes">notes</button>
+                        <button role="tab" data-tab="about">about</button>
+                        <button role="tab" data-tab="play">how to play</button>
+                        <button role="tab" data-tab="links">links</button>
+                    </div>
+                    <section class="panel" data-panel="work" role="tabpanel">
+                        <h3>Selected work</h3>
+                        <p class="sub">small things, grown slowly</p>
+                        <ol class="rows">
+                            <li>
+                                <a href="#" data-close
+                                    ><canvas data-icon="flower" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Endless garden</b
+                                        ><span>this page · a meadow you can walk forever</span>
+                                    </div>
+                                    <span class="yr">2026</span><span class="go">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="butterfly" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Pocket Meadow</b
+                                        ><span>four tiny pixel worlds to poke at</span>
+                                    </div>
+                                    <span class="yr">2026</span><span class="go">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="bee" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Hive Nine</b
+                                        ><span>an ASCII swarm for a small honey shop</span>
+                                    </div>
+                                    <span class="yr">2026</span><span class="go">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="type" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Kiln</b
+                                        ><span>a type foundry where every letter moves</span>
+                                    </div>
+                                    <span class="yr">2026</span><span class="go">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="house" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Norr &amp; Sund</b
+                                        ><span>an architecture studio on a WebGL grid</span>
+                                    </div>
+                                    <span class="yr">2026</span><span class="go">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="window" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Phoenix OS</b
+                                        ><span>a whole desktop, running in a browser tab</span>
+                                    </div>
+                                    <span class="yr">2026</span><span class="go">→</span></a
+                                >
+                            </li>
+                        </ol>
+                    </section>
+                    <section class="panel" data-panel="notes" role="tabpanel">
+                        <h3>Notes</h3>
+                        <p class="sub">short things, written slowly</p>
+                        <ol class="rows">
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="seed" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Things that wait for you</b
+                                        ><span
+                                            >on software that's still there when you come back</span
+                                        >
+                                    </div>
+                                    <span class="yr">oct</span><span class="go">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="pixel" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Every pixel, drawn in code</b
+                                        ><span>why this garden has no image files</span>
+                                    </div>
+                                    <span class="yr">sep</span><span class="go">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><canvas data-icon="moon" width="8" height="8"></canvas>
+                                    <div>
+                                        <b>Dusk is a feature</b
+                                        ><span
+                                            >slow transitions and the joy of leaving a tab
+                                            open</span
+                                        >
+                                    </div>
+                                    <span class="yr">aug</span><span class="go">→</span></a
+                                >
+                            </li>
+                        </ol>
+                    </section>
+                    <section class="panel" data-panel="about" role="tabpanel">
+                        <h3>Millie</h3>
+                        <p class="sub">
+                            I make quiet software and tiny games. This garden is my front door.
+                        </p>
+                        <div class="stats" id="sheet"></div>
+                        <h3>Collection</h3>
+                        <p class="sub">things you've found on your walks</p>
+                        <ul class="dex" id="dex"></ul>
+                    </section>
+                    <section class="panel" data-panel="play" role="tabpanel">
+                        <h3>How to play</h3>
+                        <p class="sub">there's no way to lose. wander.</p>
+                        <ul class="guide">
+                            <li>
+                                <kbd>drag ↔</kbd
+                                ><span>walk the garden. it never ends in either direction.</span>
+                            </li>
+                            <li>
+                                <kbd>tap a flower</kbd
+                                ><span>scatter its petals. it grows back in a few seconds.</span>
+                            </li>
+                            <li><kbd>tap the sky</kbd><span>a butterfly comes to say hi.</span></li>
+                            <li>
+                                <kbd>✿ plant</kbd
+                                ><span
+                                    >grow a flower of your own. it's still here next time you
+                                    visit.</span
+                                >
+                            </li>
+                            <li>
+                                <kbd>your flowers ↦</kbd
+                                ><span>walk back to the flowers you planted.</span>
+                            </li>
+                            <li>
+                                <kbd>☼ / ☾</kbd
+                                ><span
+                                    >the sky turns to dusk every minute or so. this makes it happen
+                                    now.</span
+                                >
+                            </li>
+                            <li>
+                                <kbd>keep walking</kbd
+                                ><span
+                                    >a bunny, a scarecrow, a mushroom ring, an old well and
+                                    signposts are out there. tap them.</span
+                                >
+                            </li>
+                            <li>
+                                <kbd>M</kbd
+                                ><span>open this menu. arrows to move, esc to close.</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="panel" data-panel="links" role="tabpanel">
+                        <h3>Links</h3>
+                        <p class="sub">come say hello</p>
+                        <ul class="guide">
+                            <li>
+                                <kbd>github</kbd><span><a href="#">github.com/…</a></span>
+                            </li>
+                            <li>
+                                <kbd>email</kbd><span><a href="#">hello@…</a></span>
+                            </li>
+                            <li>
+                                <kbd>are.na</kbd><span><a href="#">are.na/…</a></span>
+                            </li>
+                            <li>
+                                <kbd>made with</kbd
+                                ><span>Phoenix Code and Claude · every pixel drawn in code</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="mfoot">
+                    <span><kbd>↑↓</kbd> choose · <kbd>esc</kbd> close</span
+                    ><span>time in the garden: <b id="mTime">0:00</b></span>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
